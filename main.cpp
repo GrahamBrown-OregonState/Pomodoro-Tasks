@@ -1,6 +1,7 @@
 #include "tasks.hpp"
 #include <iostream>
 #include <string>
+#include <unistd.h>
 #include "external/tabulate/include/tabulate/table.hpp"
 
 void outputTasks(tasks t) {
@@ -31,4 +32,15 @@ void outputMenu() {
     std::cout << "1. Work on task" << std::endl;
     std::cout << "2. Mark task as complete" << std::endl;
     std::cout << "3. Reorder tasks" << std::endl;
+}
+
+int getMenuOption() {
+    int option;
+    std::cin >> option;
+    return option;
+}
+
+void displayTime(int hours, int minutes, int seconds) {
+    std::cout << hours << ":"
+        << minutes << ":" << seconds
 }
