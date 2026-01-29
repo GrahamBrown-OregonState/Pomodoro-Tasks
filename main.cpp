@@ -3,7 +3,7 @@
 #include <string>
 #include "external/tabulate/include/tabulate/table.hpp"
 
-void output_tasks(tasks t) {
+void outputTasks(tasks t) {
     using namespace tabulate;
 
     Table t_table; // task table
@@ -24,4 +24,11 @@ void output_tasks(tasks t) {
     .font_align(FontAlign::center);
 
     std::cout << t_table << std::endl;
+}
+
+void outputMenu() {
+    std::cout << "Welcome! Select an option:" << std::endl;
+    std::cout << "1. Work on task" << std::endl;
+    std::cout << "2. Mark task as complete" << std::endl;
+    std::cout << "3. Reorder tasks" << std::endl;
 }
