@@ -30,9 +30,11 @@ void outputTasks(tasks t) {
 
 void outputMenu() {
     std::cout << "Welcome! Select an option:" << std::endl;
-    std::cout << "1. Work on task" << std::endl;
-    std::cout << "2. Mark task as complete" << std::endl;
-    std::cout << "3. Reorder tasks" << std::endl;
+    std::cout << "1. Add task" << std::endl;
+    std::cout << "2. View tasks" << std::endl;
+    std::cout << "3. Work on task" << std::endl;
+    std::cout << "4. Mark task as complete" << std::endl;
+    std::cout << "5. Reorder tasks" << std::endl;
 }
 
 int getMenuOption() {
@@ -65,3 +67,4 @@ void beginTask(task t) {
         sleep(1);
     }
 }
+
