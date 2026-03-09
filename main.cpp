@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <unistd.h>
+#include <chrono>
 #include "external/tabulate/include/tabulate/table.hpp"
 
 void outputTasks(tasks t) {
@@ -43,4 +44,24 @@ int getMenuOption() {
 void displayTime(int hours, int minutes, int seconds) {
     std::cout << hours << ":"
         << minutes << ":" << seconds
+}
+
+void beginTask(task t) {
+    int hours = 0;
+    int minutes = 0;
+    int seconds = 0;
+
+    auto start_time = std::chrono::steady_clock::now();
+
+    while (true) {
+        auto current_time = std::chrono::steady_clock::now();
+        auto elapsed_time = std::chrono::duration_cast<std::chrono::seconds>(current_time - start_time).count();
+
+        hours = elapsed_time / 3600;
+        minutes = (elapsed_time % 3600) / 60;
+        seconds = elapsed_time % 60;
+
+        displayTime(hours, minutes, seconds);
+        sleep(1);
+    }
 }
